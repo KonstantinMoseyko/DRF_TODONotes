@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "todoapp",
     "django_filters",
+    "drf_yasg",
     "rest_framework.authtoken",
 ]
 
@@ -147,6 +148,7 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.SessionAuthentication",
         "rest_framework.authentication.TokenAuthentication",
     ],
+    "DEFAULT_VERSIONING_CLASS": "rest_framework.versioning.QueryParameterVersioning"
     # "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     # "PAGE_SIZE": 100,
 }
