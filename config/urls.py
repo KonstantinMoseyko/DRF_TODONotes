@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import include, path, re_path
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
+from graphene_django.views import GraphQLView
 from rest_framework.authtoken import views
 from rest_framework.routers import DefaultRouter
 
@@ -47,4 +48,5 @@ urlpatterns = [
     path("api-token-auth/", views.obtain_auth_token),
     path("swagger", schema_view.with_ui()),
     re_path(r"swagger(?P<format>\.json|\.yaml)", schema_view.without_ui()),
+    path("graphql/", GraphQLView.as_view(graphiql=True)),
 ]
