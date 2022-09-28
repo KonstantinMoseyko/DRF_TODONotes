@@ -1,7 +1,7 @@
 import React from 'react'
+import { MDBTable, MDBTableHead, MDBTableBody, MDBIcon, MDBBtn } from 'mdb-react-ui-kit';
 
-
-const TodoItem = ({ todo }) => {
+const TodoItem = ({ todo, deleteNote}) => {
     return (
         <tr>
             <td>
@@ -22,10 +22,13 @@ const TodoItem = ({ todo }) => {
             <td>
                 {todo.status}
             </td>
+            <td>
+                <MDBBtn onClick={() => deleteNote(note.id)} color='link'><MDBIcon fas icon="archive" /></MDBBtn>
+            </td>
         </tr>
     )
 }
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, deleteNote }) => {
     return (
         <table>
             <thead>
@@ -51,7 +54,7 @@ const TodoList = ({ todos }) => {
                 </tr>
             </thead>
             <tbody>
-                {todos.map((todo) => <TodoItem todo={todo} />)}
+                {todos.map((todo) => <TodoItem todo={todo} deleteNote={deleteNote} />)}
             </tbody>
         </table>
     )
