@@ -6,6 +6,8 @@ import TodoList from './components/Todo.js'
 import LoginForm from './components/LoginForm.js'
 import axios from 'axios'
 import { Route, BrowserRouter, Routes, Link, useLocation } from 'react-router-dom'
+import ProjectForm from './components/ProjectForm';
+import NoteForm from './components/NoteForm';
 
 const NotFound404 = () => {
   var { pathname } = useLocation()
